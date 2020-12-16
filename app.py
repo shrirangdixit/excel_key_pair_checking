@@ -5,8 +5,10 @@ import pandas as pd
 import json
 
 # Load the data
-sheet_1 = pd.read_excel('Sheet1.xlsx')
-sheet_2 = pd.read_excel('Sheet2.xlsx')
+path_file1 = input('Enter the first file path here:')
+path_file2 = input('Enter the second file path here:')
+sheet_1 = pd.read_excel(path_file1)
+sheet_2 = pd.read_excel(path_file1)
 
 
 def correctness(sheet_1, sheet_2):
@@ -22,7 +24,7 @@ def correctness(sheet_1, sheet_2):
                 correct_key_value_pair += 1
                 
     results = {'Number of correct name': correct_name_count,'Number of date of birth':correct_DOB_count,
-            "Number of correct key value pair": correct_key_value_pair}
+                "Number of correct key value pair": correct_key_value_pair}
     return results
 
 
